@@ -114,16 +114,16 @@ export default function CommonForm({
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-5">
         {formControls.map((controlItem) => (
-          <div key={controlItem.name} className="grid w-full gap-2">
+          <div key={controlItem.name} className="grid w-full gap-1">
             <Label className="mb-1">{controlItem.label}</Label>
             {renderInputsByComponentType(controlItem)}
           </div>
         ))}
       </div>
 
-      <Button type="submit" className="mt-4 w-full hover:border-2 border-blue-900">
+      <Button type="submit" className="mt-7 w-full hover:border-2 border-blue-900">
         {buttonText || "Submit"}
       </Button>
     </form>

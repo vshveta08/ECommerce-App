@@ -22,7 +22,7 @@ app.use(
   })
 );
 
-app.use(cookieParser());
+app.use(cookieParser()); //parse cookies on incoming requests
 app.use(express.json());
 
 app.use("/api", routes);

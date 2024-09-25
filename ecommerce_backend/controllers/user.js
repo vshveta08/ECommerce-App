@@ -81,11 +81,11 @@ const login = async (req, res) => {
         role: user.role,
       },
       JWT_SECRET_KEY,
-      { expiresIn: "2d" }
+      { expiresIn: "1d" }
     );
 
     res
-      .cookie("token", token, { httpOnly: true, secure: false })
+      .cookie("token", token, { httpOnly: true, secure: false }) // setting the token in browser's cookie
       .status(200)
       .json({
         user,
@@ -103,6 +103,7 @@ const login = async (req, res) => {
 };
 
 const logout = async (req, res) => {
+  // clearCookie("token") -> this is used to delete token from browser's cookie
   res.clearCookie("token").json({
     success: true,
     msg: "Logged out successfully",
